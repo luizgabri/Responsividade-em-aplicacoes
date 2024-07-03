@@ -1,35 +1,59 @@
-.banner {
-    background: var(--azul-degrade);
-    color: var(--branco);
-    text-align: center;
-    padding: 2.5em 2em;
+.cabeçalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.banner__titulo {
-    font-size: 18px;
+.cabeçalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 1em;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+.container__botao:checked ~ .lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo,
+.lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
     font-weight: 700;
 }
 
-.banner__texto {
-    font-weight: 500;
-    margin: 1em 0;
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
 }
 
-.banner__pesquisa {
-    background-color: transparent;
-    border: 1px solid var(--branco);
-    color: var(--branco);
-    border-radius: 24px;
-    padding: 1em;
-    width: 100%;  
-}
-
-.banner__pesquisa::placeholder {
-    font-family: var(--fonte-principal);
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    color: var(--branco);
-    background: url("../img/Lupa.svg") no-repeat;
-    background-position: 1em;  
+.container__botao {
+    display: none;
 }
